@@ -1,0 +1,35 @@
+{
+  "snapshots": [
+    {
+      "id": "snap-shared-analytics",
+      "name": "Shared analytics and reporting",
+      "scope": "ORG",
+      "scopePath": "/orgs/kg-prod/projects/shared-analytics",
+      "billingProject": "kg-shared-analytics",
+      "baselineStatus": "CURRENT",
+      "owner": "Data Platform",
+      "currentMonthUsd": 4280,
+      "budgetUsd": 6200,
+      "monthOverMonthChangePct": 4,
+      "labeledSpendPct": 99,
+      "slotUtilizationPct": 64,
+      "collectedAt": "2026-05-30T14:00:00Z"
+    },
+    {
+      "id": "snap-finance-pipelines",
+      "name": "Finance mart and export feeds",
+      "scope": "PROJECT",
+      "scopePath": "/orgs/kg-prod/projects/finance-reporting",
+      "billingProject": "kg-finance-reporting",
+      "baselineStatus": "CURRENT",
+      "owner": "FinOps Operations",
+      "currentMonthUsd": 1510,
+      "budgetUsd": 2400,
+      "monthOverMonthChangePct": 2,
+      "labeledSpendPct": 100,
+      "slotUtilizationPct": 57,
+      "collectedAt": "2026-05-30T10:30:00Z"
+    }
+  ],
+  "drifts": []
+}

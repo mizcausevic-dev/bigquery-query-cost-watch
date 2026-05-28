@@ -1,0 +1,84 @@
+{
+  "name": "bigquery-query-cost-watch",
+  "version": "0.1.0",
+  "description": "Operator surface for BigQuery query-cost governance. Reads workload and spend export JSON and surfaces bytes-scanned spikes, slot pressure, partition misses, reservation drift, attribution gaps, export freshness issues, and remediation sequencing. Library + CLI.",
+  "type": "module",
+  "license": "AGPL-3.0-or-later",
+  "author": "mizcausevic-dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizcausevic-dev/bigquery-query-cost-watch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mizcausevic-dev/bigquery-query-cost-watch/issues"
+  },
+  "homepage": "https://github.com/mizcausevic-dev/bigquery-query-cost-watch#readme",
+  "keywords": [
+    "bigquery",
+    "google-cloud",
+    "finops",
+    "cost-governance",
+    "query-analytics",
+    "query-governance",
+    "data-platform",
+    "cloud-cost",
+    "slot-management",
+    "platform-engineering",
+    "revenue-operations",
+    "typescript"
+  ],
+  "bin": {
+    "bigquery-query-cost-watch": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "docs"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/app.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/app.js",
+    "prerender": "tsx scripts/prerender.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "demo": "tsx scripts/run_demo.ts",
+    "smoke": "tsx scripts/smoke_check.ts",
+    "verify": "npm run lint && npm run typecheck && npm run coverage && npm run build && npm run demo && npm run smoke",
+    "render:assets": "powershell -ExecutionPolicy Bypass -File .\\scripts\\render_readme_assets.ps1",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@emnapi/core": "^1.10.0",
+    "@emnapi/runtime": "^1.10.0",
+    "@eslint/js": "^9.17.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.0",
+    "@types/supertest": "^6.0.3",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^9.17.0",
+    "globals": "^16.5.0",
+    "supertest": "^7.1.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0",
+    "vitest": "^2.1.8"
+  }
+}
