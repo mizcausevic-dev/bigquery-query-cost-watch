@@ -5,6 +5,13 @@
 
 Operator control plane for BigQuery query-cost posture, bytes-scanned spikes, slot pressure, attribution drift, telemetry gaps, and optimization sequencing.
 
+## Production status
+
+| Aspect | Status |
+|--------|--------|
+| Deploy | Static prerender -> **https://bigquery.kineticgain.com/** |
+| Data posture | Synthetic INFORMATION_SCHEMA and billing-export samples only; no project identifiers, dataset IDs, or live query logs are committed |
+
 ## Why this matters
 
 - BigQuery spend gets dangerous when scan spikes, partition misses, slot contention, and unlabeled workloads stay trapped in raw exports instead of one operator-readable surface.
