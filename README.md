@@ -102,3 +102,7 @@ Then open:
 - [**`gcp-billing-anomaly-router`**](https://github.com/mizcausevic-dev/gcp-billing-anomaly-router) — GCP cost anomaly routing lane
 - [**`regulatory-reporting-mart`**](https://github.com/mizcausevic-dev/regulatory-reporting-mart) — reporting and warehouse proof
 - [**`snowflake-cost-governance-studio`**](https://github.com/mizcausevic-dev/snowflake-cost-governance-studio) — warehouse cost governance on Snowflake
+
+## Part of the Kinetic Gain Suite
+
+Operator surface in the [Kinetic Gain Suite](https://suite.kineticgain.com/) — a portfolio of buyer-readable control planes spanning security posture, compliance evidence, data-platform governance, FinOps, and operator workflows. See the suite index for related surfaces. Apex: [kineticgain.com](https://kineticgain.com/).
