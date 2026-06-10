@@ -67,6 +67,7 @@ function layout(title: string, active: string, body: string) {
       .st{font-size:10px;padding:4px 9px;border-radius:6px;letter-spacing:.1em;text-transform:uppercase;border:1px solid currentColor;display:inline-block}
       .st.red{color:var(--bad)} .st.yellow{color:var(--warn)} .st.green{color:var(--good)} .st.info{color:var(--bert2)}
       .footer{margin-top:30px;padding-top:14px;border-top:1px dashed var(--line2);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:11px;color:var(--muted2);letter-spacing:.08em}
+      .footer a{color:var(--bert2);text-decoration:none}.footer a:hover{text-decoration:underline}
       a{color:inherit} code{font-family:var(--mono);font-size:12px;color:var(--bert2);background:rgba(25,199,255,.08);padding:1px 6px;border-radius:5px;border:1px solid rgba(25,199,255,.18)}
     </style>
   </head>
@@ -111,7 +112,7 @@ function layout(title: string, active: string, body: string) {
       ${body}
       <div class="footer">
         <div>bigquery-query-cost-watch · synthetic sample data only</div>
-        <div>routes: / · /query-lane · /cost-risks · /optimization-posture · /verification · /docs</div>
+        <div><a href="https://github.com/mizcausevic-dev/bigquery-query-cost-watch">GitHub</a> · <a href="https://portfolio.kineticgain.com/?q=BigQuery">Portfolio atlas</a> · <a href="https://suite.kineticgain.com/">Protocol Suite</a> · <a href="https://kineticgain.com/">Kinetic Gain</a></div>
       </div>
     </div>
   </body>
@@ -147,6 +148,22 @@ export function renderOverview() {
           <div class="src"><div class="src-name">containment first</div><div class="src-tit">Route the query-cost issue before forecast trust slips</div><p>${metrics.recommendation}</p></div>
           <div class="src"><div class="src-name">owner evidence</div><div class="src-tit">Turn usage exports into operator proof</div><p>Every lane stays tied to owner, drift family, resource, scope, and the next concrete optimization move.</p></div>
           <div class="src"><div class="src-name">recruiter signal</div><div class="src-tit">Show real BigQuery FinOps depth</div><p>This is real query-cost and optimization proof, not generic cloud-cost copy.</p></div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="sh"><h2>Product depth</h2><div class="note">buyer value · technical proof · gtm story</div></div>
+        <div class="stack">
+          <div class="src"><div class="src-name">buyer value</div><div class="src-tit">A concise answer for FinOps and data-platform leaders</div><p>Shows where BigQuery query costs are leaking, which workload owner is accountable, and what can be saved before the next forecast, chargeback, or board-facing margin review.</p></div>
+          <div class="src"><div class="src-name">technical proof</div><div class="src-tit">Analyzer, CLI, routes, and JSON evidence</div><p>Turns synthetic job, reservation, label, and billing-export snapshots into query lanes, cost risks, optimization packets, API payloads, CLI output, and screenshot-ready proof.</p></div>
+          <div class="src"><div class="src-name">gtm story</div><div class="src-tit">BigQuery spend translated into decisions</div><p>Positions Kinetic Gain between raw warehouse telemetry and executive decisions about margin leakage, data-platform efficiency, owner accountability, and analytics reliability.</p></div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="sh"><h2>What these repos have in common</h2><div class="note">risk signal · owner context · evidence packet</div></div>
+        <div class="stack">
+          <div class="src"><div class="src-name">risk signal</div><div class="src-tit">Raw warehouse telemetry becomes margin risk</div><p>Bytes-scanned spikes, slot pressure, export gaps, and unlabeled spend become a readable operating weakness instead of a buried billing export.</p></div>
+          <div class="src"><div class="src-name">owner context</div><div class="src-tit">Every spike stays attached to accountability</div><p>The surface keeps query, workload, reservation, and remediation context connected to finance, analytics, and platform owners.</p></div>
+          <div class="src"><div class="src-name">evidence packet</div><div class="src-tit">Board, audit, and operating-review material</div><p>Each issue resolves into a next action that can support diligence, governance, budget review, or data-platform optimization conversations.</p></div>
         </div>
       </section>`
   );

@@ -30,7 +30,7 @@ jobs:
       - run: npm run prerender
       - name: SEO assets (robots.txt + sitemap.xml)
         run: |
-          DOMAIN=$(cat CNAME 2>/dev/null | tr -d '[:space:]')
+          DOMAIN=$(tr -d '[:space:]' < CNAME 2>/dev/null || true)
           if [ -n "$DOMAIN" ]; then
             printf 'User-agent: *\nAllow: /\nSitemap: https://%s/sitemap.xml\n' "$DOMAIN" > site/robots.txt
             TODAY=$(date -u +%Y-%m-%d)

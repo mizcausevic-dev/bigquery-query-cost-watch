@@ -30,6 +30,30 @@ This repo demonstrates the query-cost and optimization-control-plane primitive f
 - offline-safe analysis of captured BigQuery usage exports
 - recruiter-facing BigQuery / FinOps / data-platform proof that complements the Microsoft, AWS, GCP, and reporting lanes
 
+## Product depth
+
+This is not a billing-console screenshot. It is a buyer- and operator-readable FinOps surface for teams that need to explain why warehouse spend changed, which workloads caused it, and what can be optimized without breaking analytics delivery.
+
+- **Buyer value:** gives data-platform, FinOps, analytics engineering, and finance leaders a compact answer to "where are query costs leaking, who owns the workload, and what can we save before the next forecast or chargeback review?"
+- **Technical proof:** parses synthetic BigQuery workload snapshots, reservation signals, labels, export freshness, and query-risk observations into routes, JSON APIs, CLI output, screenshots, and optimization packets.
+- **GTM story:** positions Kinetic Gain as the layer between raw warehouse telemetry and executive decisions about margin leakage, data-platform efficiency, owner accountability, and analytics reliability.
+
+## What these repos have in common
+
+The BigQuery cost surface follows the same Kinetic Gain pattern used across cloud, identity, revenue, and regulated-infrastructure repos:
+
+- a **risk signal** that turns raw platform telemetry into a readable operating weakness
+- an **owner context** that keeps spend, workload, or control accountability attached to a role
+- an **evidence packet** that can support audit, diligence, board, or operating-review conversations
+- a **next action** that converts "we should optimize" into a concrete containment or remediation path
+
+## Operating workflow
+
+1. Export or model BigQuery job, reservation, label, and billing-export snapshots.
+2. Run the analyzer locally or in CI against captured JSON payloads.
+3. Review query lanes, cost risks, and optimization posture before forecast, chargeback, or migration decisions.
+4. Use the static site and JSON endpoints as a buyer-readable artifact for FinOps review, data-platform governance, or portfolio diligence.
+
 ## Routes
 
 - `/`

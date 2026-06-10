@@ -12,8 +12,13 @@ import {
 
 describe("render", () => {
   test("overview carries the BigQuery cost framing", () => {
-    expect(renderOverview()).toContain("BigQuery query-cost posture");
-    expect(renderOverview()).toContain("BigQuery / FinOps / query-cost proof");
+    const overview = renderOverview();
+    expect(overview).toContain("BigQuery query-cost posture");
+    expect(overview).toContain("BigQuery / FinOps / query-cost proof");
+    expect(overview).toContain("Product depth");
+    expect(overview).toContain("What these repos have in common");
+    expect(overview).toContain("Portfolio atlas");
+    expect(overview).toContain("buyer value");
   });
 
   test("lane and posture routes render expected headings", () => {

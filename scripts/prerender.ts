@@ -22,6 +22,7 @@ import {
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDir = path.join(root, "site");
+const domain = fs.readFileSync(path.join(root, "CNAME"), "utf8").trim();
 
 fs.rmSync(outputDir, { recursive: true, force: true });
 fs.mkdirSync(outputDir, { recursive: true });
@@ -58,3 +59,26 @@ for (const [relativePath, data] of Object.entries(apiPayloads)) {
   fs.mkdirSync(path.dirname(fullPath), { recursive: true });
   fs.writeFileSync(fullPath, JSON.stringify(data, null, 2), "utf8");
 }
+
+const today = new Date().toISOString().slice(0, 10);
+const htmlPaths = Object.keys(pages)
+  .filter((relativePath) => relativePath.endsWith(".html"))
+  .map((relativePath) => {
+    if (relativePath === "index.html") return "/";
+    if (relativePath.endsWith(`${path.sep}index.html`)) return `/${relativePath.slice(0, -"index.html".length).replaceAll(path.sep, "/")}`;
+    return `/${relativePath.replaceAll(path.sep, "/")}`;
+  });
+
+fs.writeFileSync(
+  path.join(outputDir, "robots.txt"),
+  `User-agent: *\nAllow: /\nSitemap: https://${domain}/sitemap.xml\n`,
+  "utf8"
+);
+
+fs.writeFileSync(
+  path.join(outputDir, "sitemap.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${htmlPaths
+    .map((route) => `  <url><loc>https://${domain}${route}</loc><lastmod>${today}</lastmod></url>`)
+    .join("\n")}\n</urlset>\n`,
+  "utf8"
+);
